@@ -1,4 +1,6 @@
+"use strict"
 const arr = [1, 2, 3];
+
 
 // push
 Array.prototype.myPush = function() {
@@ -56,7 +58,7 @@ Array.prototype.myUnshift = function() {
 }
 
 // map
-Array.prototype.myMap = function(callback, context=this) {
+Array.prototype.myMap = function(callback, context = this) {
   if (typeof callback !== 'function') {
     throw new TypeError(`${typeof callback} ${callback} is not a function`);
   }
@@ -71,33 +73,25 @@ Array.prototype.myMap = function(callback, context=this) {
 }
 
 // filter
-// Array.prototype.myFilter = function(callback, context = this) {
-//   for (let i = 0; i < context.length; i++) {
+Array.prototype.myFilter = function(callback, context = this) {
+  if (typeof callback !== 'function') {
+    throw new TypeError(`${typeof callback} ${callback} is not a function`);
+  }
 
-//   }
-// }
+  const res = [];
+
+  for (let i = 0; i < context.length; i++) {
+    if (callback(context[i], i, context)) {
+      res.push(context[i]);
+    }
+  }
+
+  return res;
+}
 
 
 
-arr.myFilter((elem) => elem > 1);
-// const test1 = arr.myUnshift(0);
-console.log(arr);
-// console.log(test1);
-// const newArr = arr.myMap(1);
-// console.log(newArr);
 
-// const test = arr.myPush(4, {lol: 'lol'});
-// const test = arr.myPop();
-// const test = arr.myShift();
-
-// const test = {
-//   name: 'Dan',
-//   job: 'Software Developer',
-// };
-
-// Array.prototype.myUnshift.call(test, 0);
-
-// console.log(test);
 
 
 
