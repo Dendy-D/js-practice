@@ -17,3 +17,13 @@ function reverseString(str) {
   return arr.join('');
 }
 
+// function removeDuplicates(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (!arr.slice(i + 1).includes(arr[i])) {
+//       console.log(1);
+//     }
+//   }
+// }
+
+console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5])); // Output: [1, 2, 3, 4, 5]
+// console.log(removeDuplicates([1, 1, 1, 1, 1])); // Output: [1]
