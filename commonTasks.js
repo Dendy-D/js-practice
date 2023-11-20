@@ -1,4 +1,4 @@
-// string reverse
+// string reverse (in place)
 
 function reverseString(str) {
   const arr = str.split('');
@@ -17,13 +17,17 @@ function reverseString(str) {
   return arr.join('');
 }
 
-// function removeDuplicates(arr) {
-//   for (let i = 0; i < arr.length; i++) {
-//     if (!arr.slice(i + 1).includes(arr[i])) {
-//       console.log(1);
-//     }
-//   }
-// }
 
-console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5])); // Output: [1, 2, 3, 4, 5]
-// console.log(removeDuplicates([1, 1, 1, 1, 1])); // Output: [1]
+// remove duplicates (in place)
+
+function removeDuplicates(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] === arr[j]) {
+        arr.splice(j, 1);
+        j--
+      }
+    }
+  }
+  return arr;
+}
