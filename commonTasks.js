@@ -1,3 +1,5 @@
+"use strict"
+
 // string reverse (in place)
 
 // Input: 'hello'
@@ -274,3 +276,20 @@ function countNicePairs(nums) {
 
   return result % (10 ** 9 + 7);
 };
+
+
+
+
+
+
+
+let map = new Map();
+
+map.set("name", "John");
+
+let keys = [...map.keys()];
+
+// Error: keys.push is not a function
+keys.push("more");
+
+
